@@ -11,7 +11,7 @@ Oder eine BIS Gear Übersicht 🤔
 
 Plan: 
  - Grundgerüst 
-   - Docker
+   - ✔️ Docker
    - Symfony(?)
    - PhpUnit Config
    - PhpStan Config
@@ -30,3 +30,8 @@ Plan:
  - Neueste gelaufene Dungeons
  - Bis Gear
 
+### Laufen lassen
+
+`docker compose up --build -d`
+
+Adresse: http://jagdgesellschaft.local:6108/index.php

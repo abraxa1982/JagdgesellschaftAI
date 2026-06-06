@@ -1,0 +1,51 @@
+{
+  "name": "abraxa/jagdgesellschaft-ai",
+  "description": "Trying to build an fancy Webpage for the WoW Guild",
+  "config": {
+    "sort-packages": true
+  },
+  "repositories": [
+  ],
+  "extra": {
+  },
+  "minimum-stability": "stable",
+  "require": {
+    "php": "^8.3",
+    "ext-fileinfo": "*",
+    "ext-intl": "*"
+  },
+  "require-dev": {
+    "phpstan/phpstan": "^2.0.0",
+    "phpstan/phpstan-strict-rules": "^2.0.0",
+    "phpunit/php-code-coverage": "^12.5.7",
+    "phpunit/phpunit": "^12.5.29",
+    "filp/whoops": "^2.14",
+    "friendsofphp/php-cs-fixer": "^3.75.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "JagdGesellschaft\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "JagdGesellschaft\\Tests\\Unit\\": "tests/unit",
+      "JagdGesellschaft\\Tests\\Shared\\": "tests/shared",
+      "JagdGesellschaft\\Tests\\Assets\\": "tests/assets"
+    }
+  },
+  "scripts": {
+    "check": [
+      "@cs-check",
+      "@analyze",
+      "@test"
+    ],
+    "analyze": "docker exec -it jagdgesellschaft-ai-app ./vendor/bin/phpstan analyze -l max -c ./phpstan.neon ./src",
+    "cs-check": "docker exec -it jagdgesellschaft-ai-app ./vendor/bin/php-cs-fixer fix --dry-run --diff",
+    "cs-fix": "docker exec -it jagdgesellschaft-ai-app ./vendor/bin/php-cs-fixer fix",
+    "test": "docker exec -it jagdgesellschaft-ai-app ./vendor/bin/phpunit --colors=always",
+    "test-dox": "docker exec -it jagdgesellschaft-ai-app ./vendor/bin/phpunit --colors=always --testdox",
+    "test-filter": "sh -c 'docker exec -it jagdgesellschaft-ai-app ./vendor/bin/phpunit --colors=always --filter \"$1\"' --",
+    "test-coverage": "docker exec -it jagdgesellschaft-ai-pp ./vendor/bin/phpunit --coverage-html coverage-report --colors=always"
+  }
+}
