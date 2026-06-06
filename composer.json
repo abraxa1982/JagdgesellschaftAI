@@ -2,17 +2,32 @@
   "name": "abraxa/jagdgesellschaft-ai",
   "description": "Trying to build an fancy Webpage for the WoW Guild",
   "config": {
+    "allow-plugins": {
+      "symfony/flex": true,
+      "symfony/runtime": true
+    },
     "sort-packages": true
   },
   "repositories": [
   ],
   "extra": {
+    "symfony": {
+      "allow-contrib": false,
+      "require": "^7.2"
+    }
   },
   "minimum-stability": "stable",
+  "prefer-stable": true,
   "require": {
     "php": "^8.3",
     "ext-fileinfo": "*",
-    "ext-intl": "*"
+    "ext-intl": "*",
+    "symfony/dotenv": "^7.2",
+    "symfony/flex": "^2.4",
+    "symfony/framework-bundle": "^7.2",
+    "symfony/runtime": "^7.2",
+    "symfony/twig-bundle": "^7.2",
+    "twig/extra-bundle": "^3.0"
   },
   "require-dev": {
     "phpstan/phpstan": "^2.0.0",
@@ -20,7 +35,8 @@
     "phpunit/php-code-coverage": "^12.5.7",
     "phpunit/phpunit": "^12.5.29",
     "filp/whoops": "^2.14",
-    "friendsofphp/php-cs-fixer": "^3.75.0"
+    "friendsofphp/php-cs-fixer": "^3.75.0",
+    "symfony/debug-bundle": "^7.2"
   },
   "autoload": {
     "psr-4": {
@@ -40,12 +56,16 @@
       "@analyze",
       "@test"
     ],
-    "analyze": "docker exec -it jagdgesellschaft-ai-app ./vendor/bin/phpstan analyze -l max -c ./phpstan.neon ./src",
-    "cs-check": "docker exec -it jagdgesellschaft-ai-app ./vendor/bin/php-cs-fixer fix --dry-run --diff",
-    "cs-fix": "docker exec -it jagdgesellschaft-ai-app ./vendor/bin/php-cs-fixer fix",
-    "test": "docker exec -it jagdgesellschaft-ai-app ./vendor/bin/phpunit --colors=always",
-    "test-dox": "docker exec -it jagdgesellschaft-ai-app ./vendor/bin/phpunit --colors=always --testdox",
-    "test-filter": "sh -c 'docker exec -it jagdgesellschaft-ai-app ./vendor/bin/phpunit --colors=always --filter \"$1\"' --",
-    "test-coverage": "docker exec -it jagdgesellschaft-ai-pp ./vendor/bin/phpunit --coverage-html coverage-report --colors=always"
+    "analyze": "docker exec -i jagdgesellschaft-ai-app ./vendor/bin/phpstan analyze -l max -c ./phpstan.neon ./src",
+    "cs-check": "docker exec -i jagdgesellschaft-ai-app ./vendor/bin/php-cs-fixer fix --dry-run --diff",
+    "cs-fix": "docker exec -i jagdgesellschaft-ai-app ./vendor/bin/php-cs-fixer fix",
+    "test": "docker exec -i jagdgesellschaft-ai-app ./vendor/bin/phpunit --colors=always",
+    "test-dox": "docker exec -i jagdgesellschaft-ai-app ./vendor/bin/phpunit --colors=always --testdox",
+    "test-filter": "sh -c 'docker exec -i jagdgesellschaft-ai-app ./vendor/bin/phpunit --colors=always --filter \"$1\"' --",
+    "test-coverage": "docker exec -i jagdgesellschaft-ai-pp ./vendor/bin/phpunit --coverage-html coverage-report --colors=always",
+    "auto-scripts": {
+      "cache:clear": "symfony-cmd",
+      "assets:install %PUBLIC_DIR%": "symfony-cmd"
+    }
   }
 }

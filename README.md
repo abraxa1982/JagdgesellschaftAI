@@ -12,9 +12,9 @@ Oder eine BIS Gear Übersicht 🤔
 Plan: 
  - Grundgerüst 
    - ✔️ Docker
-   - Symfony(?)
-   - PhpUnit Config
-   - PhpStan Config
+   - ✔️ Symfony
+   - ✔️ PhpUnit Config
+   - ✔️ PhpStan Config
    - composer Befehle und git Hooks einrichten
  - Anbindung an die Blizzard API (https://community.developer.battle.net/documentation/world-of-warcraft)
    - Zugangsdaten lokal speichern (nicht ins git)
