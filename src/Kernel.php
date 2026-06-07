@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace JagdGesellschaft;
 
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\HttpKernel\Kernel as BaseKernel;
