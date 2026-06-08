@@ -22,12 +22,12 @@ Oder eine BIS Gear Übersicht 🤔
    - ✔️ PhpStan Config
    - ✔️ composer Befehle und git Hooks einrichten
  - Anbindung an die Blizzard API (https://community.developer.battle.net/documentation/world-of-warcraft)
-   - Zugangsdaten lokal speichern (nicht ins git)
-   - Oauth einrichten
-   - Token speichern (Cookie vs Datenbank), depends on Strategie beim:
+   - ✔️ Zugangsdaten lokal speichern (nicht ins git)
+   - ✔️ Oauth einrichten
+   - ✔️ Token speichern (Cookie vs Datenbank), depends on Strategie beim:
  - Login!
-   - Eigene User, die manuell von einem Admin frei geschaltet werden müssen?
-   - Login via Battle.Net und nur Mitglieder der Gilde dürfen?
+   - ~~Eigene User, die manuell von einem Admin frei geschaltet werden müssen?~~
+   - ✔️ Login via Battle.Net und nur Mitglieder der Gilde dürfen?
  - Übersicht der Gildenmitglieder mit Wertung und Berufen
  - Dito Pets, Reittiere und Erfolge
  - Kalender? 
