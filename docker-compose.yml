@@ -8,8 +8,10 @@ services:
     container_name: jagdgesellschaft-ai-web
     ports:
       - '6108:80'
+      - '6443:443'
     volumes:
       - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./docker/nginx/certs:/etc/nginx/certs:ro
       - ./:/var/www/html
 
   # php

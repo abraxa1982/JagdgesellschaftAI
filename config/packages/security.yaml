@@ -1,0 +1,20 @@
+security:
+    providers:
+        battle_net_users:
+            id: JagdGesellschaft\Security\BattleNetUserProvider
+
+    firewalls:
+        dev:
+            pattern: ^/(_profiler|_wdt)/
+            security: false
+        main:
+            lazy: true
+            provider: battle_net_users
+            custom_authenticators:
+                - JagdGesellschaft\Security\BattleNetAuthenticator
+            logout:
+                path: /logout
+                target: home
+                enable_csrf: true
+
+    access_control: []

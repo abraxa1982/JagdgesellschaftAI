@@ -6,6 +6,7 @@
         <title>{% block title %}Jagdgesellschaft{% endblock %}</title>
         <link rel="icon" href="{{ asset('images/jagdgesellschaft.png') }}">
         <link rel="stylesheet" href="{{ asset('css/base.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/nav.css') }}">
         {% block styles %}{% endblock %}
         {% block head %}{% endblock %}
     </head>
@@ -13,6 +14,17 @@
         <header>
             <img src="{{ asset('images/jagdgesellschaft.png') }}" alt="Jagdgesellschaft Logo">
             <h1>Jagdgesellschaft</h1>
+            <nav class="user-nav">
+                {% if app.user %}
+                    <span class="battletag">{{ app.user.battleTag }}</span>
+                    <form method="post" action="{{ path('_logout_main') }}">
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('logout') }}">
+                        <button type="submit" class="logout-btn">Abmelden</button>
+                    </form>
+                {% else %}
+                    <a href="{{ path('auth_battlenet_start') }}" class="login-btn">Mit Battle.net anmelden</a>
+                {% endif %}
+            </nav>
         </header>
 
         <main>

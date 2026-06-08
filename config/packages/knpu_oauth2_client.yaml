@@ -1,0 +1,11 @@
+knpu_oauth2_client:
+    clients:
+        battle_net:
+            type: generic
+            provider_class: JagdGesellschaft\Security\BattleNetProvider
+            provider_options:
+                region: '%env(BATTLENET_REGION)%'
+            client_id: '%env(BATTLENET_CLIENT_ID)%'
+            client_secret: '%env(BATTLENET_CLIENT_SECRET)%'
+            redirect_route: auth_battlenet_check
+            redirect_params: {}
