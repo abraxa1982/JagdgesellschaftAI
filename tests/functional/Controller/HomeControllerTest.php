@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace JagdGesellschaft\Tests\Functional\Controller;
 
 use JagdGesellschaft\Controller\HomeController;

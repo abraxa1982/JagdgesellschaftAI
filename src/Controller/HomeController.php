@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace JagdGesellschaft\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;

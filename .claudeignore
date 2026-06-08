@@ -1,0 +1,93 @@
+# === Secrets & Credentials (Token-Opt + symbolische Sperre) ===
+.env
+.env.*
+*.env
+config/autoload/*.local.php
+config/autoload/local.php
+config/development.config.php
+
+# Schlüssel & Zertifikate
+*.pem
+*.key
+*.crt
+*.cer
+*.p12
+*.pfx
+id_rsa
+id_rsa.*
+id_ed25519*
+*_rsa
+*_dsa
+*_ecdsa
+known_hosts
+authorized_keys
+
+# Datenbanken & Dumps
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+data/db/
+*.sql.gz
+*.dump
+
+# === Tokenfresser ===
+vendor/
+node_modules/
+data/cache/
+data/log/
+data/sessions/
+data/config-cache.php
+var/cache/
+var/log/
+
+# === Build-/Test-Artefakte ===
+public/build/
+public/dist/
+public/assets/build/
+coverage/
+.phpunit.result.cache
+.phpunit.cache/
+.php-cs-fixer.cache
+.phpstan.cache/
+.psalm.cache/
+
+# === Uploads / User-Daten ===
+public/uploads/
+public/media/
+storage/uploads/
+data/uploads/
+
+# === Backups / Editor-Temporäres ===
+*.bak
+*.backup
+*.orig
+*.swp
+*~
+.~lock.*
+*.tmp
+
+# === IDE Workspace-spezifisch (Code-Style aber BEHALTEN!) ===
+.idea/workspace.xml
+.idea/dataSources.xml
+.idea/dataSources.local.xml
+.idea/shelf/
+.idea/tasks.xml
+.idea/usage.statistics.xml
+.vscode/settings.json
+.vscode/launch.json
+# NICHT ignorieren (helfen Claude): .idea/inspectionProfiles/, .idea/php.xml, .editorconfig
+
+# === OS-Müll ===
+.DS_Store
+Thumbs.db
+
+# === Deploy & CI Artefakte ===
+.deployer/
+deployer.local.php
+.terraform/
+*.tfstate*
+
+# === Logs ===
+*.log
+logs/
